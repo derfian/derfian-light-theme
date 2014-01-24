@@ -98,6 +98,7 @@
    `(mu4e-replied-face ((,class (:foreground ,cham-3))))
    `(mu4e-trashed-face ((,class (:strike-through ,red-1))))
    `(mu4e-unread-face ((,class (:foreground ,blue-3 :bold t))))
+   `(mu4e-cited-1-face ((,class (:foreground ,plum-1))))
 
    ;; mu4e-moved-face, mu4e-header-face, mu4e-header-title-face,
    ;; mu4e-header-highlight-face, mu4e-header-marks-face,
@@ -105,11 +106,10 @@
    ;; mu4e-special-header-value-face, mu4e-link-face,
    ;; mu4e-contact-face, mu4e-highlight-face, mu4e-title-face,
    ;; mu4e-footer-face, mu4e-url-number-face, mu4e-attach-number-face,
-   ;; mu4e-cited-1-face, mu4e-cited-2-face, mu4e-cited-3-face,
-   ;; mu4e-cited-4-face, mu4e-cited-5-face, mu4e-cited-6-face,
-   ;; mu4e-cited-7-face, mu4e-system-face, mu4e-ok-face,
-   ;; mu4e-warning-face, mu4e-compose-separator-face,
-   ;; mu4e-compose-header-face
+   ;; mu4e-cited-2-face, mu4e-cited-3-face, mu4e-cited-4-face,
+   ;; mu4e-cited-5-face, mu4e-cited-6-face, mu4e-cited-7-face,
+   ;; mu4e-system-face, mu4e-ok-face, mu4e-warning-face,
+   ;; mu4e-compose-separator-face, mu4e-compose-header-face
 
    ;; message
 
