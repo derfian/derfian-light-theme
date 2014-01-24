@@ -54,6 +54,7 @@
    `(show-paren-mismatch ((,class (:background ,red-1 :foreground ,red-3))))
    `(show-paren-match ((,class (:background ,alum-3))))
    `(mode-line ((,class (:foreground ,alum-6 :background ,alum-3))))
+   `(mode-line-highlight ((,class (:inherit mode-line))))
    `(mode-line-inactive ((,class (:foreground ,alum-4 :background ,alum-3))))
 
    ;; font-lock
