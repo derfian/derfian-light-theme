@@ -1,19 +1,20 @@
 ;; derfian-light-theme.el --- a light, low-contrast color theme for Emacs
-
+;;
 ;; Copyright © 2014      Karl Mikaelsson <derfian@hamsterkollektivet.se>
-
+;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
 ;; (at your option) any later version.
-
+;;
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
-
+;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+;;
 
 (deftheme derfian-light
   "A light, low-contrast color theme with Tango colors")
@@ -38,42 +39,72 @@
        (red-1 "#ef2929")  (red-2 "#cc0000")  (red-3 "#a40000")
        (alum-1 "#eeeeec") (alum-2 "#d3d7cf") (alum-3 "#babdb6")
        (alum-4 "#888a85") (alum-5 "#5f615c") (alum-6 "#2e3436")
+
        ;; Not in Tango palette; used for better contrast.
-       (cham-4 "#346604") (blue-0 "#8cc4ff") (orange-4 "#b35000")
+
+       ;; Lighter
+       (blue-0 "#8cc4ff")
+
+       ;; Darker
+       (butter-4 "#9c8000") (orange-4 "#9c4900") (choc-4 "#724701")
+       (cham-4 "#346604") (blue-4 "#193b6c") (plum-4 "#492a51")
+       (red-4 "#830000") (alum-7 "#24292b")
+
+       ;; DAAAAARKER (saturation 100, value 40)
+       (butter-5 "#665400") (orange-5 "#663000") (choc-5 "#402700")
+       (cham-5 "#274D03") (blue-5 "#001F4D") (plum-5 "#2B0336")
+       (red-5 "#6e0000") (alum-8 "#24292b")
+
        ;; Palette to generic names
        (global-bg alum-2)
-       (global-fg alum-5))
+       (global-fg alum-6))
 
   (custom-theme-set-faces
    'derfian-light
+
    `(default ((,class (:foreground ,global-fg :background ,global-bg))))
    `(fringe ((,class (:inherit linum))))
    `(trailing-whitespace ((,class (:background ,red-3))))
-   `(highline-face ((,class (:background ,alum-2))))
-   `(linum ((,class (:background ,alum-3 :foreground ,alum-2))))
+   `(highlight ((,class ())))
+   `(highline-face ((,class (:inherit highlight))))
+   `(linum ((,class (:background ,alum-2 :foreground ,alum-3))))
    `(show-paren-mismatch ((,class (:background ,red-1 :foreground ,red-3))))
-   `(show-paren-match ((,class (:background ,alum-3))))
-   `(mode-line ((,class (:foreground ,alum-6 :background ,alum-3))))
-   `(mode-line-highlight ((,class (:inherit mode-line))))
+   `(show-paren-match ((,class (:bold t :foreground ,red-4))))
+   `(mode-line ((,class (:foreground ,alum-6 :background ,alum-3 :box nil))))
+;;   `(mode-line-highlight ((,class (:inherit mode-line :underline ,red-1))))
    `(mode-line-inactive ((,class (:foreground ,alum-4 :background ,alum-3))))
+   `(region ((,class (:background ,butter-1))))
+   `(warning ((,class (:foreground ,orange-2))))
+
+   ;; isearch?
 
    ;; font-lock
 
-   `(font-lock-builtin-face ((,class (:foreground ,blue-2))))
-   `(font-lock-comment-face ((,class (:foreground ,orange-4))))
-   `(font-lock-constant-face ((,class (:foreground ,blue-1))))
-   `(font-lock-function-name-face ((,class (:foreground ,blue-1 :bold t))))
-   `(font-lock-keyword-face ((,class (:foreground ,blue-3 :bold t))))
+   `(font-lock-builtin-face ((,class (:foreground ,blue-4))))
+   `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
+   `(font-lock-comment-face ((,class (:foreground ,red-3))))
+   `(font-lock-constant-face ((,class (:foreground ,choc-2 :bold t))))
+   `(font-lock-doc-face ((,class (:foreground ,orange-3))))
+   `(font-lock-doc-string-face ((,class (:inherit font-lock-doc-face))))
+   `(font-lock-function-name-face ((,class (:foreground ,blue-1  :bold t))))
+   `(font-lock-keyword-face ((,class (:foreground ,blue-4 :bold t))))
+   `(font-lock-negation-char-face ((,class (:foreground ,red-3))))
    `(font-lock-other-type-face ((,class (:foreground ,cham-2 :bold t))))
+   `(font-lock-preprocessor-face ((,class (:foreground ,plum-3))))
+   `(font-lock-special-keyword-face ((,class (:background ,red-3 :foreground ,red-1))))
    `(font-lock-string-face ((,class (:foreground ,cham-4))))
+   `(font-lock-type-face ((,class (:foreground "#2F8547"))))
+   `(font-lock-variable-name-face ((,class (:foreground ,orange-4))))
+   `(font-lock-warning-face ((,class (:foreground ,butter-4 :background ,butter-2))))
 
-   ;; font-lock-color-constant-face, font-lock-doc-face,
-   ;; font-lock-doc-string-face, font-lock-negation-char-face,
-   ;; font-lock-other-emphasized-face, font-lock-preprocessor-face,
-   ;; font-lock-reference-face, font-lock-regexp-grouping-backslash,
-   ;; font-lock-regexp-grouping-construct,
-   ;; font-lock-special-keyword-face, font-lock-type-face,
-   ;; font-lock-variable-name-face, font-lock-warning-face
+   ;; FIXME:
+   `(font-lock-pseudo-keyword-face ((,class (:bold t))))
+
+   ;; `(font-lock-color-constant-face ((,class ())))
+   ;; `(font-lock-other-emphasized-face ((,class ())))
+   ;; `(font-lock-reference-face ((,class ())))
+   ;; `(font-lock-regexp-grouping-backslash ((,class ())))
+   ;; `(font-lock-regexp-grouping-construct ((,class ())))
 
    ;; outlines/org
 
@@ -87,49 +118,83 @@
    `(outline-8 ((,class (:foreground ,blue-1 :bold t))))
    `(org-todo ((,class (:foreground ,red-3 :background ,red-1 :bold t))))
    `(org-done ((,class (:foreground ,cham-3 :background ,cham-1 :bold t))))
-   `(org-table ((,class (:foreground ,blue-1))))
+   `(org-table ((,class (:foreground ,choc-3))))
+   `(org-mode-line-clock ((,class (:bold t))))
 
    ;; mu4e
 
-   `(mu4e-contact-face ((,class (:foreground ,orange-3))))
-   `(mu4e-draft-face ((,class (:foreground ,blue-1 :slant italic))))
-   `(mu4e-flagged-face ((,class (:foreground ,butter-1 :background ,butter-3))))
-   `(mu4e-forwarded-face ((,class (:inherit mu4e-replied-face ))))
-   `(mu4e-replied-face ((,class (:foreground ,cham-3))))
-   `(mu4e-trashed-face ((,class (:strike-through ,red-1))))
-   `(mu4e-unread-face ((,class (:foreground ,blue-3 :bold t))))
-   `(mu4e-cited-1-face ((,class (:foreground ,plum-1))))
+   ;; `(mu4e-cited-1-face ((,class (:foreground ,plum-1))))
+   ;; `(mu4e-compose-separator-face ((,class (:inherit message-separator))))
+   ;; `(mu4e-contact-face ((,class (:foreground ,orange-3))))
+   ;; `(mu4e-draft-face ((,class (:foreground ,blue-1 :slant italic))))
+   ;; `(mu4e-flagged-face ((,class (:foreground ,butter-1 :background ,butter-3))))
+   ;; `(mu4e-forwarded-face ((,class (:inherit mu4e-replied-face))))
+   ;; `(mu4e-header-face ((,class (:inherit default))))
+   ;; `(mu4e-header-highlight-face ((,class (:background ,orange-1))))
+   ;; `(mu4e-header-key-name ((,class (:inherit message-header-name))))
+   ;; `(mu4e-header-marks-face ((,class (:foreground ,red-1))))
+   ;; `(mu4e-header-title-face ((,class (:foreground ,plum-1))))
+   ;; `(mu4e-header-value-face ((,class (:foreground ,orange-3))))
+   ;; `(mu4e-moved-face ((,class (:strike-through ,choc-2))))
+   ;; `(mu4e-replied-face ((,class (:foreground ,cham-3))))
+   ;; `(mu4e-trashed-face ((,class (:strike-through ,red-1))))
+   ;; `(mu4e-unread-face ((,class (:foreground ,red-2 :bold t))))
+   ;; `(mu4e-footer-face ((,class (:foreground ,alum-4))))
 
-   ;; mu4e-moved-face, mu4e-header-face, mu4e-header-title-face,
-   ;; mu4e-header-highlight-face, mu4e-header-marks-face,
-   ;; mu4e-header-key-face, mu4e-header-value-face,
-   ;; mu4e-special-header-value-face, mu4e-link-face,
-   ;; mu4e-contact-face, mu4e-highlight-face, mu4e-title-face,
-   ;; mu4e-footer-face, mu4e-url-number-face, mu4e-attach-number-face,
-   ;; mu4e-cited-2-face, mu4e-cited-3-face, mu4e-cited-4-face,
-   ;; mu4e-cited-5-face, mu4e-cited-6-face, mu4e-cited-7-face,
-   ;; mu4e-system-face, mu4e-ok-face, mu4e-warning-face,
-   ;; mu4e-compose-separator-face, mu4e-compose-header-face
+   ;; mu4e-attach-number-face,
+   ;; mu4e-cited-2-face
+   ;; mu4e-cited-3-face
+   ;; mu4e-cited-4-face
+   ;; mu4e-cited-5-face
+   ;; mu4e-cited-6-face
+   ;; mu4e-cited-7-face
+   ;; mu4e-compose-header-face
+   ;; mu4e-contact-face
+   ;; mu4e-highlight-face
+   ;; mu4e-link-face
+   ;; mu4e-ok-face
+   ;; mu4e-special-header-value-face
+   ;; mu4e-system-face
+   ;; mu4e-title-face,
+   ;; mu4e-url-number-face
+   ;; mu4e-warning-face
 
    ;; message
 
-   `(message-cited-text ((,class (:inherit mu4e-cited-1-face))))
+   ;; `(message-cited-text ((,class (:inherit mu4e-cited-1-face))))
+   ;; `(message-header-name ((,class (:foreground ,blue-3 :bold t))))
+   ;; `(message-header-from ((,class (:foreground ,blue-3 :bold t))))
+   ;; `(message-header-to ((,class (:foreground ,orange-3 :bold t))))
+   ;; `(message-header-subject ((,class (:foreground ,cham-3 :bold t))))
+   ;; `(message-header-other ((,class (:foreground ,orange-3))))
+   ;; `(message-separator ((,class (:foreground ,global-bg :strike-through ,global-fg))))
 
-   ;; message-header-from
-   ;; message-header-name
    ;; message-header-newsgroups
-   ;; message-header-other
-   ;; message-header-subject
-   ;; message-header-to
    ;; message-header-xheader
    ;; message-mml
-   ;; message-separator
 
    ;; flyspell
 
    `(flyspell-incorrect ((,class (:underline (:color ,red-1 :style wave)))))
    `(flyspell-duplicate ((,class (:inherit flyspell-incorrect))))
 
+   ;; diff
+
+   `(diff-indicator-removed ((,class (:background ,red-1 :foreground ,red-3))))
+   `(diff-indicator-added ((,class (:background ,cham-1 :foreground ,cham-3))))
+
+   ;; diff-removed
+   ;; diff-added
+   ;; diff-context
+   ;; diff-header
+   ;; diff-file-header
+   ;; diff-hunk-header
+
+   ;; sh-mode
+   `(sh-quoted-exec ((,class (:foreground ,red-1))))
+
+   ;; js2-mode
+   `(js2-external-variable ((,class (:foreground ,orange-4))))
    ))
 
 (provide-theme 'derfian-light)
