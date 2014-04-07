@@ -24,7 +24,6 @@
  '(menu-bar-mode nil)
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
- '(font-use-system-font t)
  '(show-trailing-whitespace t))
 
 ;; Thanks, tango-theme.el!
@@ -64,7 +63,7 @@
 
    `(default ((,class (:foreground ,global-fg :background ,global-bg))))
    `(fringe ((,class (:inherit linum))))
-   `(trailing-whitespace ((,class (:background ,red-3))))
+   `(trailing-whitespace ((,class (:strike-through ,red-3))))
    `(highlight ((,class ())))
    `(highline-face ((,class (:inherit highlight))))
    `(linum ((,class (:background ,alum-2 :foreground ,alum-3))))
