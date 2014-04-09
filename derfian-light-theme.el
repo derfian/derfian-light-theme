@@ -110,19 +110,19 @@
                          :background ,alum-2
                          :box (:line-width 1 :color ,alum-3)))))
    ;; Inactive mode line
-   `(mode-line-inactive ((,class (:inherit mode-line
-                                  :foreground ,alum-3))))
+   `(mode-line-inactive ((,class (:inherit mode-line :foreground ,alum-3))))
 
    ;; stuff in mode line that is clickable
    `(mode-line-highlight ((,class (:inherit mode-line))))
 
-   `(region ((,class (:background "white"))))
+   `(region ((,class (:inverse-video t))))
    `(warning ((,class (:foreground ,orange-2))))
    `(error ((,class (:foreground ,red-1))))
 
    ;; isearch
-   `(isearch ((,class (:background ,plum-1))))
+   `(isearch ((,class (:background ,blue-0))))
    `(isearch-fail ((,class (:background ,red-1))))
+   `(lazy-highlight ((,class (:weight ,bolder-weight :underline ,blue-0))))
 
    ;; font-lock
 
