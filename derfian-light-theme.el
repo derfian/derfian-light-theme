@@ -93,7 +93,7 @@
        (bolder-weight (derfian/font-weight-bolder bold-weight 2))
        (light-weight (derfian/font-weight-lighter default-weight 1))
        (lighter-weight (derfian/font-weight-lighter light-weight 2)))
-  (message "%s" bolder-weight)
+
   (custom-theme-set-faces
    'derfian-light
    `(default ((,class (:foreground ,global-fg :background ,global-bg))))
