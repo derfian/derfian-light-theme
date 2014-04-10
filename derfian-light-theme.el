@@ -19,7 +19,34 @@
 (deftheme derfian-light
   "A light, low-contrast color theme with Tango colors")
 
-(require 'derfian-font-weights)
+;; Helper functions to programmatically modify font weights.
+;; FIXME: package this separately
+(defvar derfian/font-weights
+  '((ultra-bold . 9)
+    (extra-bold . 8)
+    (bold . 7)
+    (semi-bold . 6)
+    (normal . 5)
+    (semi-light . 4)
+    (light . 3)
+    (extra-light . 2)
+    (ultra-light . 1)))
+
+(defun derfian/modify-font-weight (weight adj &optional steps)
+  "Returns a relatively different font weight, optionally adjusted steps. "
+  (let* ((step (if steps steps 1))
+         (current (cdr (assoc weight derfian/font-weights)))
+         ;; Clamp modified value to 1-9.
+         (new (min (max 1 (funcall adj current step)) 9)))
+    (car (rassoc new derfian/font-weights))))
+
+(defun derfian/font-weight-bolder (weight &optional steps)
+  "Return a relatively bolder font weight."
+  (derfian/modify-font-weight weight '+ steps))
+
+(defun derfian/font-weight-lighter (weight &optional steps)
+  "Returns a relatively lighter font weight."
+  (derfian/modify-font-weight weight '- steps))
 
 (custom-theme-set-variables
  'derfian-light
