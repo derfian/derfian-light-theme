@@ -142,7 +142,7 @@
    ;; stuff in mode line that is clickable
    `(mode-line-highlight ((,class (:inherit mode-line))))
 
-   `(region ((,class (:inverse-video t))))
+   `(region ((,class (:background ,alum-5 :foreground ,alum-1))))
    `(warning ((,class (:foreground ,orange-2))))
    `(error ((,class (:foreground ,red-1))))
 
