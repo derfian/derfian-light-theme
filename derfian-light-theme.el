@@ -267,6 +267,21 @@
 
    ;; js2-mode
    `(js2-external-variable ((,class (:foreground ,orange-4))))
+
+   ;; Magit
+   `(magit-item-highlight ((,class (:background ,butter-0))))
+   ;; magit-diff-hunk-header
+   `(magit-diff-file-header ((,class (:weight ,default-weight :background ,alum-3))))
+   `(magit-diff-hunk-header ((,class (:weight ,bold-weight :background ,alum-2 :box (:line-width 1 :color ,alum-3)))))
+   ;; magit-diff-file-header
+   `(magit-section-title ((,class (:weight ,bold-weight))))
+   
+   ;; magit-branch
+   `(magit-tag ((,class (:weight ,bold-weight :background ,alum-2 :foreground ,blue-2))))
+
+   ;; magit-diff-add
+   ;; magit-diff-del
+   ;; magit-diff-none
    ))
 
 (provide-theme 'derfian-light)
