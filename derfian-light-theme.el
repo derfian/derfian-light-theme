@@ -58,6 +58,7 @@
 ;; Thanks for the color definitions, tango-theme.el!
 (let* ((class '((class color) (min-colors 89)))
 
+       (butter-0 "#fff496")
        (butter-1 "#fce94f")
        (butter-2 "#edd400")
        (butter-3 "#c4a000")
