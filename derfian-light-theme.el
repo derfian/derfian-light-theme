@@ -149,7 +149,7 @@
 
    ;; isearch
    `(isearch ((,class (:background ,blue-0))))
-   `(isearch-fail ((,class (:background ,red-1))))
+   `(isearch-fail ((,class (:strike-through ,red-1))))
    `(lazy-highlight ((,class (:weight ,bolder-weight :underline ,blue-0))))
 
    ;; font-lock
