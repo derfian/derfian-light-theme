@@ -192,6 +192,8 @@
    `(org-done ((,class (:foreground ,cham-3 :background ,cham-1 :weight ,bold-weight))))
    `(org-table ((,class (:foreground ,choc-3))))
    `(org-mode-line-clock ((,class (:weight ,bold-weight))))
+   `(org-date ((,class (:foreground ,blue-1 :underline ,blue-1))))
+   `(org-special-keyword ((,class (:foreground ,blue-4 :weight ,bold-weight))))
 
    ;; mu4e
 
