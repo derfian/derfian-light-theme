@@ -201,6 +201,7 @@
    ;; `(mu4e-draft-face ((,class (:foreground ,blue-1 :slant italic))))
    ;; `(mu4e-flagged-face ((,class (:foreground ,butter-1 :background ,butter-3))))
    ;; `(mu4e-forwarded-face ((,class (:inherit mu4e-replied-face))))
+   ;; `(mu4e-footer-face ((,class (:foreground ,alum-4))))
    `(mu4e-header-face ((,class (:foreground ,alum-7 :weight ,default-weight))))
    `(mu4e-header-highlight-face ((,class (:background ,alum-2))))
    ;; `(mu4e-header-key-name ((,class (:inherit message-header-name))))
@@ -210,7 +211,6 @@
    ;; `(mu4e-moved-face ((,class (:strike-through ,choc-2))))
    ;; `(mu4e-replied-face ((,class (:foreground ,cham-3))))
    ;; `(mu4e-trashed-face ((,class (:strike-through ,red-1))))
-   ;; `(mu4e-footer-face ((,class (:foreground ,alum-4))))
    `(mu4e-unread-face ((,class (:foreground ,red-2 :weight ,bold-weight))))
 
    ;; mu4e-attach-number-face,
