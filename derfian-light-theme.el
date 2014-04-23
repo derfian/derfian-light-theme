@@ -282,7 +282,7 @@
    `(magit-diff-hunk-header ((,class (:weight ,bold-weight :background ,alum-2 :box (:line-width 1 :color ,alum-3)))))
    ;; magit-diff-file-header
    `(magit-section-title ((,class (:weight ,bold-weight))))
-   
+
    ;; magit-branch
    `(magit-tag ((,class (:weight ,bold-weight :background ,alum-2 :foreground ,blue-2))))
 
@@ -292,4 +292,3 @@
    ))
 
 (provide-theme 'derfian-light)
-
