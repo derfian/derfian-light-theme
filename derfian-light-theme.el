@@ -114,6 +114,11 @@
        (global-bg alum-1)
        (global-fg alum-6)
 
+       ;; FIXME: Look into color manipulation libraries to preserve
+       ;; lightness of background but tilt it towards red. I did it
+       ;; manually right now.
+       (error-bg "#FFCBC9")
+
        ;; Font weights
        ;; light/medium/demibold/bold/black?
        (default-weight (face-attribute 'default :weight))
@@ -126,7 +131,7 @@
    'derfian-light
    `(default ((,class (:foreground ,global-fg :background ,global-bg))))
    `(fringe ((,class (:inherit linum))))
-   `(trailing-whitespace ((,class (:strike-through ,red-3))))
+   `(trailing-whitespace ((,class (:background ,error-bg :underline ,red-3))))
    `(highlight ((,class ())))
    `(highline-face ((,class (:inherit highlight))))
    `(linum ((,class (:background ,global-bg :foreground ,alum-3))))
